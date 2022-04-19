@@ -1,0 +1,45 @@
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+}
+#chessboard {
+  display: grid;
+  flex: 1;
+  place-content: center;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: repeat(4, 100px);
+  width: 400px;
+  height: 400px;
+}
+#pieces {
+  display: grid;
+  flex: 1;
+  place-content: center;
+  grid-template-columns: repeat(4, 70px);
+  grid-template-rows: repeat(4, 80px);
+  width: 200px;
+  height: 400px;
+}
+
+#chessboard .tile {
+  width: 100px;
+  height: 100px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: aliceblue;
+  background-color: black;
+}
+.Score,
+.Pieces {
+  position: absolute;
+}
+.Score {
+  left: 1rem;
+}
+.Pieces {
+  right: 1rem;
+}

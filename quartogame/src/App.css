@@ -1,3 +1,9 @@
+
+.Board {
+  height: 100vh;
+  background-color: #202020;
+}
+
 .section__padding {
   padding: 4rem 6rem;
 }

@@ -1,0 +1,18 @@
+.PieceImage {
+  width: 100px;
+  height: 100px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: aliceblue;
+  background-color: black;
+}
+.Pieces {
+  display: grid;
+  flex: 1;
+  place-content: center;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: repeat(4, 100px);
+  width: 400px;
+  height: 400px;
+  background-color: red;
+}

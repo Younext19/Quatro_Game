@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdOutlineRestaurantMenu } from "react-icons/md";
-import { useNavigate } from "react-router-dom"
-import {Link} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import images from "../../constants/images";
 import "./Navbar.css";
 
 const Navbar = () => {
   const [ToggleMenu, setToggleMenu] = useState(false);
+  const navigate = useNavigate();
   return (
     <div className="app__navbar">
       <div className="app__navbar-logo p__opensans">
@@ -24,13 +25,18 @@ const Navbar = () => {
         <li className="p__opensans">
           <a href="#menu">Menu</a>
         </li>
-       
       </ul>
       <div className="app__navbar-login">
-        <a href="#login" className="p__opensans">
+        <span
+          className="p__opensans"
+          style={{ cursor: "pointer" }}
+          onClick={(e) => {
+            e.preventDefault();
+            navigate("/game");
+          }}
+        >
           Play Game
-        </a>
-        
+        </span>
       </div>
       <div className="app__navbar-smallscreen">
         <GiHamburgerMenu

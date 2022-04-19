@@ -1,5 +1,5 @@
 import React from "react";
-import { data } from "../../constants";
+import { images, data } from "../../constants";
 import "./Rules.css";
 
 const AwardCard = ({ award: { imgUrl, title, subtitle } }) => (
@@ -24,8 +24,6 @@ const Rules = () => (
         ))}
       </div>
     </div>
-
- 
   </div>
 );
 

@@ -1,82 +1,46 @@
-import images from './images';
-
-const wines = [
-  {
-    title: 'Chapel Hill Shiraz',
-    price: '$56',
-    tags: 'AU | Bottle',
-  },
-  {
-    title: 'Catena Malbee',
-    price: '$59',
-    tags: 'AU | Bottle',
-  },
-  {
-    title: 'La Vieillw Rose',
-    price: '$44',
-    tags: 'FR | 750 ml',
-  },
-  {
-    title: 'Rhino Pale Ale',
-    price: '$31',
-    tags: 'CA | 750 ml',
-  },
-  {
-    title: 'Irish Guinness',
-    price: '$26',
-    tags: 'IE | 750 ml',
-  },
-];
-
-const cocktails = [
-  {
-    title: 'Aperol Sprtiz',
-    price: '$20',
-    tags: 'Aperol | Villa Marchesi prosecco | soda | 30 ml',
-  },
-  {
-    title: "Dark 'N' Stormy",
-    price: '$16',
-    tags: 'Dark rum | Ginger beer | Slice of lime',
-  },
-  {
-    title: 'Daiquiri',
-    price: '$10',
-    tags: 'Rum | Citrus juice | Sugar',
-  },
-  {
-    title: 'Old Fashioned',
-    price: '$31',
-    tags: 'Bourbon | Brown sugar | Angostura Bitters',
-  },
-  {
-    title: 'Negroni',
-    price: '$26',
-    tags: 'Gin | Sweet Vermouth | Campari | Orange garnish',
-  },
-];
+import images from "./images";
 
 const awards = [
   {
     imgUrl: images.award02,
-    title: 'Bib Gourmond',
-    subtitle: 'Lorem ipsum dolor sit amet, consectetur.',
+    title: "Bib Gourmond",
+    subtitle: "Lorem ipsum dolor sit amet, consectetur.",
   },
   {
     imgUrl: images.award01,
-    title: 'Rising Star',
-    subtitle: 'Lorem ipsum dolor sit amet, consectetur.',
+    title: "Rising Star",
+    subtitle: "Lorem ipsum dolor sit amet, consectetur.",
   },
   {
     imgUrl: images.award04,
-    title: 'AA Hospitality',
-    subtitle: 'Lorem ipsum dolor sit amet, consectetur.',
+    title: "AA Hospitality",
+    subtitle: "Lorem ipsum dolor sit amet, consectetur.",
   },
   {
     imgUrl: images.award03,
-    title: 'Outstanding',
-    subtitle: 'Lorem ipsum dolor sit amet, consectetur.',
+    title: "Outstanding",
+    subtitle: "Lorem ipsum dolor sit amet, consectetur.",
   },
 ];
 
-export default { wines, cocktails, awards };
+const pieces = [
+  {
+    img: images.bcen,
+  },
+  { img: images.bcer },
+  { img: images.bcfn },
+  { img: images.bcfr },
+  { img: images.bsen },
+  { img: images.bser },
+  { img: images.bsfn },
+  { img: images.bsfr },
+  { img: images.wcen },
+  { img: images.wcer },
+  { img: images.wcfn },
+  { img: images.wcfr },
+  { img: images.wsen },
+  { img: images.wser },
+  { img: images.wsfn },
+  { img: images.wsfr },
+];
+export default { awards, pieces };
