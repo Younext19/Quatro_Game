@@ -32,7 +32,7 @@ const Navbar = () => {
           style={{ cursor: "pointer" }}
           onClick={(e) => {
             e.preventDefault();
-            navigate("/game");
+            navigate("/game-settings");
           }}
         >
           Play Game

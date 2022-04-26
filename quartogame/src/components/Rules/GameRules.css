@@ -1,0 +1,16 @@
+.full {
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+input[type="radio"].demo1 {
+  display: none;
+}
+input[type="radio"].demo1 + label {
+  padding: 0.3rem 0.5rem;
+  border: 1px dashed #ccc;
+}
+input[type="radio"].demo1:checked + label {
+  border: 1px solid #000;
+}
