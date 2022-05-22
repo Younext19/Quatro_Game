@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 
 export default function GameRules() {
   const navigate = useNavigate();
-
   const [value, setvalue] = useState("1");
   const [selectedPlayer, setselectedPlayer] = useState("Computer");
   const handleChange = (e) => {
@@ -21,7 +20,7 @@ export default function GameRules() {
       <br />
       <h3>Vs</h3>
       <br />
-      <div onChange={onChangeValue}>
+      <div onChange={onChangeValue} className="radioButton">
         <input type="radio" value="Computer" name="player" /> Computer
         <input type="radio" value="J2" name="player" /> Joueur 2
       </div>{" "}

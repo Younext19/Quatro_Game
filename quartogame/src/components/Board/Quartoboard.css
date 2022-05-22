@@ -15,16 +15,13 @@
   width: 400px;
   height: 400px;
 }
-#pieces {
-  display: grid;
-  place-content: center;
-  grid-template-columns: repeat(4, 70px);
-  grid-template-rows: repeat(4, 80px);
-  width: 200px;
-  height: 400px;
-}
+
 .pice {
   cursor: pointer;
+}
+
+.piceClicked {
+  cursor: none;
 }
 
 #chessboard .tile {
@@ -46,6 +43,24 @@
 }
 .Pieces {
   right: 3rem;
+  display: grid;
+  place-content: center;
+  grid-template-columns: repeat(4, 70px);
+  grid-template-rows: repeat(4, 80px);
+  width: 200px;
+  height: 400px;
+}
+
+.PiecesClicked {
+  right: 3rem;
+  display: grid;
+  place-content: center;
+  position: absolute;
+  grid-template-columns: repeat(4, 70px);
+  grid-template-rows: repeat(4, 80px);
+  width: 200px;
+  height: 400px;
+  pointer-events: none;
 }
 
 #chessboardClick {
