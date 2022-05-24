@@ -47,7 +47,7 @@ export default function GameRules() {
             <option value="AI">Intelligence Artificielle</option>
             <option value="J1">Joueur</option>
           </select>
-          {selectedFirstPlayer == "AI" ? (
+          {selectedFirstPlayer === "AI" ? (
             <div>
               <select
                 value={selectedFirstPlayer}
@@ -79,7 +79,7 @@ export default function GameRules() {
             <option value="AI">Intelligence Artificielle</option>
             <option value="J1">Joueur</option>
           </select>
-          {selectedPlayer == "AI" ? (
+          {selectedPlayer === "AI" ? (
             <div>
               <div>
                 <select
@@ -114,8 +114,8 @@ export default function GameRules() {
             onClick={(e) => {
               e.preventDefault();
               if (
-                (selectedFirstPlayer == "J1" && Username1 == "") ||
-                (selectedFirstPlayer == "J2" && Username2 == "")
+                (selectedFirstPlayer === "J1" && Username1 === "") ||
+                (selectedFirstPlayer === "J2" && Username2 === "")
               ) {
                 toast(`Vous devez donnez un nom au Joueur 1`);
               } else {

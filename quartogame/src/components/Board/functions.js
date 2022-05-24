@@ -3,17 +3,17 @@ export function checkWinFact(level) {
     if (level1(board)) {
       return true;
     }
-    if (level == 2) {
+    if (level === 2) {
       if (level2(board)) {
         return true;
       }
     }
-    if (level == 3) {
+    if (level === 3) {
       if (level3(board)) {
         return true;
       }
     }
-    if (level == 4) {
+    if (level === 4) {
       if (level4(board)) {
         return true;
       }
@@ -44,10 +44,10 @@ function checkRow(boardPiecesParam) {
   );
 }
 function checkCol(boardParam) {
-  var cols = boardParam.map((x) => x[0]);
-  var cols1 = boardParam.map((x) => x[1]);
-  var cols2 = boardParam.map((x) => x[2]);
-  var cols3 = boardParam.map((x) => x[3]);
+  const cols = boardParam.map((x) => x[0]);
+  const cols1 = boardParam.map((x) => x[1]);
+  const cols2 = boardParam.map((x) => x[2]);
+  const cols3 = boardParam.map((x) => x[3]);
   let k = cols.every((res) => res != null);
   if (k) {
     return checkRow(cols);

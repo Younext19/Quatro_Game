@@ -1,6 +1,7 @@
 export default class Node {
     parent;
     data;
+    addedPiece;
     freePieces;
     isMax;
     isLeaf;
@@ -23,9 +24,11 @@ export default class Node {
      * @param data {[[Piece|null]]}
      * @param freePieces {[Piece]}
      * @param isMax {boolean}
+     * @param addedPiece {Piece | null}
      * @param checkWin {Function}
      */
-    constructor(isLeaf,parent,data,freePieces,isMax,checkWin) {
+    constructor(isLeaf,parent,data,freePieces,isMax,addedPiece,checkWin) {
+        this.addedPiece = addedPiece;
         this.parent = parent;
         this.data = data;
         this.freePieces = freePieces;
@@ -35,14 +38,20 @@ export default class Node {
 
     }
 
+    /**
+     *
+     * @return {number}
+     */
     get size(){
-        if(this.isLeaf)
-            return 0
         if (!this.children)
             this.children = this.nextChildren()
         return this.children.length
     }
-
+    get h(){
+        if (!this.isLeaf)
+            return 0
+        return this.isMax ? 1 : -1
+    }
     /**
      * @return [Node]
      */
@@ -50,13 +59,19 @@ export default class Node {
         if (this.isLeaf)
             return [];
         return this.freePieces.flatMap(
-            piece => getNextGames(this.data,piece).map(
-                data =>
-                    new Node(this.checkWin(data),this,data,this.freePieces.filter(e=>e!==piece),!this.isMax,this.checkWin)
-            )
+            piece => this.next(piece)).slice(0,16)
+    }
+    next(piece){
+        return getNextGames(this.data,piece).map(
+            data =>
+                new Node(this.checkWin(data),this,data,this.freePieces.filter(e=>e!==piece),!this.isMax,piece,this.checkWin)
         )
     }
-
+    getSource(){
+        if(this.parent.parent == null)
+            return this
+        return this.parent.getSource()
+    }
     nextChild(){
         if (this.currentChild >= this.size)
             return null
@@ -153,8 +168,20 @@ function isDataEquals(data1,data2) {
         (row,rowIndex) =>
             row.every(
                 (elem,colIndex) =>
-                    ((elem === null) && (data2[rowIndex][colIndex] ===null)) ||
-                    elem?.equals(data2[rowIndex][colIndex])
+                    isPiecesEqual(elem,data2[rowIndex][colIndex])
             )
     )
+}
+
+/**
+ *
+ * @param piece1 {Piece | null}
+ * @param piece2 {Piece | null}
+ */
+function isPiecesEqual(piece1, piece2) {
+    if(piece1 === null && piece2 === null)
+        return true
+    if (piece1 === null || piece2===null)
+        return false
+    return piece1.getIndex() === piece2.getIndex()
 }

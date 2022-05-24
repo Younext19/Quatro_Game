@@ -1,5 +1,5 @@
 import React from "react";
-import { images,awards } from "../../constants";
+import {awards} from "../../constants";
 import "./Rules.css";
 
 const AwardCard = ({ award: { imgUrl, title, subtitle } }) => (

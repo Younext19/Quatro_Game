@@ -1,5 +1,6 @@
 import images from "./images";
 import Piece from "../strategy/Piece";
+import {MinMaxStrategy} from "../strategy/Strategy";
 
 export const awards = [
   {
@@ -126,3 +127,14 @@ export const piecesFun = [
   new Piece(true, true, true, false),
   new Piece(true, true, true, true),
 ];
+
+/**
+ *
+ * @param algo {string}
+ * @return {MinMaxStrategy}
+ */
+export function getAlgorithmInstance(algo){
+  if (algo==="minimax")
+    return new MinMaxStrategy()
+  throw new Error("not implemented")
+}
