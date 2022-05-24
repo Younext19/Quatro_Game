@@ -1,9 +1,23 @@
 .full {
+  display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  flex-direction: column;
 }
-
+.allInputs {
+  margin-top: 100px;
+  color: white;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+.inputUsr {
+  width: 300px;
+  height: 40px;
+  border-radius: 8px;
+  border-width: 1px;
+  padding: 8px;
+}
 input[type="radio"].demo1 {
   display: none;
 }
@@ -13,4 +27,8 @@ input[type="radio"].demo1 + label {
 }
 input[type="radio"].demo1:checked + label {
   border: 1px solid #000;
+}
+
+.radioButton input {
+  margin-left: 5px;
 }

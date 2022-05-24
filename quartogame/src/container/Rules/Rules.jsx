@@ -17,7 +17,7 @@ const AwardCard = ({ award: { imgUrl, title, subtitle } }) => (
 const Rules = () => (
   <div className="app__bg app__wrapper section__padding" id="awards">
     <div className="app__wrapper_info">
-      <h1 className="headtext__cormorant">Rules</h1>
+      <h1 className="headtext__cormorant">Règles</h1>
       <div className="app__laurels_awards">
         {data.awards.map((award) => (
           <AwardCard award={award} key={award.title} />

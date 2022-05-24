@@ -2,24 +2,27 @@ import images from "./images";
 
 const awards = [
   {
-    imgUrl: images.award02,
-    title: "Bib Gourmond",
-    subtitle: "Lorem ipsum dolor sit amet, consectetur.",
-  },
-  {
     imgUrl: images.award01,
-    title: "Rising Star",
-    subtitle: "Lorem ipsum dolor sit amet, consectetur.",
+    title: "Joueur",
+    subtitle: "Le premier joueur est tiré au sort",
   },
   {
-    imgUrl: images.award04,
-    title: "AA Hospitality",
-    subtitle: "Lorem ipsum dolor sit amet, consectetur.",
+    imgUrl: images.award02,
+
+    title: "Gameplay",
+    subtitle:
+      "choisit une des 16 pièces et la donne à son adversaire et il place sur case libre",
   },
   {
     imgUrl: images.award03,
-    title: "Outstanding",
-    subtitle: "Lorem ipsum dolor sit amet, consectetur.",
+    title: "Gameplay",
+    subtitle:
+      "Celui-ci doit la placer sur une des cases du plateau et choisir ensuite on revient à 2.",
+  },
+  {
+    imgUrl: images.award04,
+    title: "Gain de la partie",
+    subtitle: "Il crée une ligne de 4 pièces de mêmes caractéristique.",
   },
 ];
 

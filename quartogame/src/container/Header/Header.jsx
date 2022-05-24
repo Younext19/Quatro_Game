@@ -12,10 +12,13 @@ const Header = () => {
       <div className="app__wrapper_info">
         <h1 className="app__header-h1">Quarto Game</h1>
         <p className="p__opensans" style={{ margin: "2rem 0" }}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-          imperdiet tortor dolor, a aliquet sem fringilla eget. Mauris ac ligula
-          tellus. Integer pellentesque enim nec purus tristique euismod vel eu
-          risus. Ut nec orci lacinia, scelerisque lacus quis, faucibus purus.
+          Dans ce jeu de réflexion, les seize pièces du jeu, toutes différentes,
+          possèdent chacune 4 caractères distincts : haute ou basse, ronde ou
+          carrée, claire ou foncée, pleine ou creuse. Chacun à son tour choisit
+          et donne une pièce à l'adversaire, qui doit la jouer sur une case
+          libre. Le gagnant est celui qui, avec une pièce reçue, crée un
+          alignement de 4 pièces ayant au moins un caractère commun et annonce :
+          «QUARTO !».
         </p>
         <button
           type="button"

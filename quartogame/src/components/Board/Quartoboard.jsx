@@ -37,13 +37,7 @@ export default function Quartoboard() {
     [null, null, null, null],
   ]);
   const [selectedPiece, setselectedPiece] = useState({});
-  /**
-   *
-   * @param {Piece} p1
-   * @param {Piece} p2
-   * @param {Piece} p3
-   * @param {Piece} p4
-   */
+
   // Pieces on line
   function wonPlayer() {
     toast(`${params.active} won`);
@@ -56,6 +50,8 @@ export default function Quartoboard() {
     setParams(aux);
     setpiecesClickable("piecesNone");
   }
+
+  // Voir si l'utilisateur a gagné
   function check(p1, p2, p3, p4) {
     return (
       (p1.trou === p2.trou && p3.trou === p4.trou && p1.trou === p3.trou) ||
@@ -143,9 +139,6 @@ export default function Quartoboard() {
         <br />
         <br />
         <p>Tour du {params?.active}</p>
-        <p>
-          {`${params?.players[0]?.name} ${params?.players[0]?.score} - ${params?.players[1]?.score} ${params?.players[1]?.name}`}
-        </p>
       </div>
       <div className="centeredBoard">
         {Board.map((res, index) => {

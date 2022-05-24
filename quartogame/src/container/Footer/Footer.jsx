@@ -13,12 +13,6 @@ const Footer = () => (
         <p className="p__opensans">
           &quot;Made with ♡ by Younes and Houssem&quot;
         </p>
-
-        <div className="app__footer-links_icons">
-          <FiFacebook />
-          <FiTwitter />
-          <FiInstagram />
-        </div>
       </div>
     </div>
     <div className="footer__copyright">
