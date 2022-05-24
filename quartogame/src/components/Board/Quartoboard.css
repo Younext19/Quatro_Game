@@ -26,6 +26,7 @@
   border-color: rgb(255, 255, 255);
   background-color: rgb(0, 0, 0);
   color: aliceblue;
+  pointer-events: none;
 }
 .piecesShowMain {
   display: grid;
@@ -67,6 +68,9 @@ On Piece Click change classname of html
 }
 .piecesShow {
   cursor: pointer;
+}
+.piecesNone {
+  pointer-events: none;
 }
 
 .pice {

@@ -76,4 +76,4 @@ const piecesFun = [
   new Piece(true, true, true, false),
   new Piece(true, true, true, true),
 ];
-export default { awards, piecesFun };
+export default { awards, piecesFun, Piece };
