@@ -1,3 +1,27 @@
+export function checkWinFact(level) {
+  return (board) => {
+    if (level1(board)) {
+      return true;
+    }
+    if (level == 2) {
+      if (level2(board)) {
+        return true;
+      }
+    }
+    if (level == 3) {
+      if (level3(board)) {
+        return true;
+      }
+    }
+    if (level == 4) {
+      if (level4(board)) {
+        return true;
+      }
+    }
+    return false;
+  };
+}
+
 // Voir si l'utilisateur a gagné
 function check(p1, p2, p3, p4) {
   return (
@@ -56,5 +80,125 @@ function checkDiag(boardParam) {
   let k2 = diagonal2.every((res) => res != null);
   if (k2) {
     return checkRow(diagonal2);
+  }
+}
+
+function level1(Board) {
+  for (let index = 0; index < 4; index++) {
+    let k = Board[index].every((res) => res != null);
+    if (k) {
+      if (checkRow(Board[index])) {
+        return true;
+      }
+    }
+  }
+  if (checkCol(Board)) {
+    return true;
+  }
+  if (checkDiag(Board)) {
+    return true;
+  }
+}
+function level2(allBoard) {
+  for (let i = 0; i < 3; i++) {
+    const twoFirstCols = [
+      allBoard[0][i],
+      allBoard[0][i + 1],
+      allBoard[1][i],
+      allBoard[1][i + 1],
+    ];
+    const middleCols = [
+      allBoard[1][i],
+      allBoard[1][i + 1],
+      allBoard[2][i],
+      allBoard[2][i + 1],
+    ];
+    const lastCols = [
+      allBoard[2][i],
+      allBoard[2][i + 1],
+      allBoard[3][i],
+      allBoard[3][i + 1],
+    ];
+    let k1 = twoFirstCols.every((res) => res != null);
+    if (k1) {
+      return checkRow(twoFirstCols);
+    }
+    let k2 = middleCols.every((res) => res != null);
+    if (k2) {
+      return checkRow(middleCols);
+    }
+    let k3 = lastCols.every((res) => res != null);
+    if (k3) {
+      return checkRow(lastCols);
+    }
+  }
+}
+
+function level3(allBoard) {
+  for (let i = 0; i < 2; i++) {
+    const FirstThirdCols = [
+      allBoard[0][i],
+      allBoard[0][i + 2],
+      allBoard[2][i],
+      allBoard[2][i + 2],
+    ];
+    const SecondFourthCols = [
+      allBoard[1][i],
+      allBoard[1][i + 2],
+      allBoard[3][i],
+      allBoard[3][i + 2],
+    ];
+
+    let k1 = FirstThirdCols.every((res) => res != null);
+    if (k1) {
+      return checkRow(FirstThirdCols);
+    }
+    let k2 = SecondFourthCols.every((res) => res != null);
+    if (k2) {
+      return checkRow(SecondFourthCols);
+    }
+  }
+}
+
+function level4(allBoard) {
+  const FirstCols = [
+    allBoard[0][1],
+    allBoard[1][0],
+    allBoard[1][2],
+    allBoard[2][1],
+  ];
+  const SecondCols = [
+    allBoard[0][2],
+    allBoard[1][1],
+    allBoard[1][3],
+    allBoard[3][3],
+  ];
+  const ThirdCols = [
+    allBoard[1][1],
+    allBoard[2][0],
+    allBoard[2][2],
+    allBoard[3][1],
+  ];
+  const FourthCols = [
+    allBoard[1][2],
+    allBoard[2][1],
+    allBoard[2][3],
+    allBoard[3][2],
+  ];
+  let k1 = FirstCols.every((res) => res != null);
+  if (k1) {
+    return checkRow(FirstCols);
+  }
+  let k2 = SecondCols.every((res) => res != null);
+  if (k2) {
+    return checkRow(SecondCols);
+  }
+  let k3 = ThirdCols.every((res) => res != null);
+  if (k3) {
+    return checkRow(ThirdCols);
+  }
+  let k4 = FourthCols.every((res) => res != null);
+  if (k4) {
+    return checkRow(FourthCols);
   }
 }
