@@ -1,5 +1,5 @@
 import React from "react";
-import { images, data } from "../../constants";
+import { images,awards } from "../../constants";
 import "./Rules.css";
 
 const AwardCard = ({ award: { imgUrl, title, subtitle } }) => (
@@ -19,7 +19,7 @@ const Rules = () => (
     <div className="app__wrapper_info">
       <h1 className="headtext__cormorant">Règles</h1>
       <div className="app__laurels_awards">
-        {data.awards.map((award) => (
+        {awards.map((award) => (
           <AwardCard award={award} key={award.title} />
         ))}
       </div>
