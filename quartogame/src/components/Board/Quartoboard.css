@@ -8,10 +8,11 @@
 }
 .centeredBoard {
   display: grid;
-  flex: 1;
+  align-items: center;
+  justify-content: center;
   place-content: center;
-  grid-template-columns: repeat(4, 100px);
   grid-template-rows: repeat(4, 100px);
+  grid-template-columns: repeat(4, 100px);
   width: 400px;
   height: 400px;
 }
