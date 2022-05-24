@@ -2,13 +2,24 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
+}
+.styling {
+  display: flex;
+  border-width: 1px;
+  border-color: white;
+  border-style: dashed;
+  align-items: center;
+  justify-content: center;
+  width: 500px;
+  padding: 50px;
+  margin-top: 100px;
+  border-radius: 8px;
 }
 .allInputs {
-  margin-top: 100px;
+  display: flex;
+
   color: white;
   align-items: center;
-  display: flex;
   flex-direction: column;
 }
 .inputUsr {
@@ -17,18 +28,31 @@
   border-radius: 8px;
   border-width: 1px;
   padding: 8px;
-}
-input[type="radio"].demo1 {
-  display: none;
-}
-input[type="radio"].demo1 + label {
-  padding: 0.3rem 0.5rem;
-  border: 1px dashed #ccc;
-}
-input[type="radio"].demo1:checked + label {
-  border: 1px solid #000;
+  margin-top: 30px;
 }
 
 .radioButton input {
   margin-left: 5px;
+}
+
+.selectors {
+  width: 300px;
+  height: 40px;
+  border-radius: 8px;
+  border-width: 1px;
+  padding: 4px;
+  margin-top: 30px;
+  background-color: white;
+}
+.startButton {
+  width: 300px;
+  height: 40px;
+  border-radius: 8px;
+  border-width: 1px;
+  padding: 2px;
+  margin-top: 30px;
+  background-color: #8cc084;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
 }
