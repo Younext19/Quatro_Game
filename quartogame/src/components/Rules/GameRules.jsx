@@ -50,7 +50,7 @@ export default function GameRules() {
           {selectedFirstPlayer === "AI" ? (
             <div>
               <select
-                value={selectedFirstPlayer}
+                value={selectedAlgorithm1}
                 onChange={onChangeAlgorithm1}
                 className="selectors"
               >
@@ -83,7 +83,7 @@ export default function GameRules() {
             <div>
               <div>
                 <select
-                  value={selectedFirstPlayer}
+                  value={selectedAlgorithm2}
                   onChange={onChangeAlgorithm2}
                   className="selectors"
                 >

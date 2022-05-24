@@ -47,9 +47,18 @@ export default class Node {
             this.children = this.nextChildren()
         return this.children.length
     }
-    get h(){
-        if (!this.isLeaf)
-            return 0
+
+    /**
+     *
+     * @param depth
+     * @return {number}
+     */
+    h(depth){
+
+        if (this.size!==0 && depth>0)
+            return this.children.reduce(
+                (acc,e)=> acc + e.h(depth-1),0
+            )
         return this.isMax ? 1 : -1
     }
     /**
@@ -59,16 +68,17 @@ export default class Node {
         if (this.isLeaf)
             return [];
         return this.freePieces.flatMap(
-            piece => this.next(piece)).slice(0,16)
+            piece => this.next(piece)).slice(0,10).sort((a, b) => 0.5 - Math.random());
     }
     next(piece){
+        const pieces = this.freePieces.filter(e=>e!==piece);
         return getNextGames(this.data,piece).map(
             data =>
-                new Node(this.checkWin(data),this,data,this.freePieces.filter(e=>e!==piece),!this.isMax,piece,this.checkWin)
+                new Node(this.checkWin(data),this,data,pieces,!this.isMax,piece,this.checkWin)
         )
     }
     getSource(){
-        if(this.parent.parent == null)
+        if(this.parent==null || this.parent.parent == null)
             return this
         return this.parent.getSource()
     }
@@ -83,23 +93,20 @@ export default class Node {
  *
  * @param data {[[Piece|null]]}
  * @param piece {Piece}
- * @return [[[Piece|null]]]
+ * @return Function*
  */
 function getNextGames(data, piece) {
-    const games = data.flatMap(
-        (row,rowIndex)=> row.map(
-            (elem, colIndex) =>{
-                if(elem ===null){
-                    const newData = clone(data)
-                    newData[rowIndex][colIndex] = piece
-                    return newData
-                }
-                return null
+    const games = []
+    for (let i=0;i<data.length;i++){
+        for(let j=0;j<data[i].length;j++){
+            if (data[i][j]===null){
+                const newData = clone(data)
+                newData[i][j] = piece
+                games.push(newData)
             }
-        )
-    ).filter(e => e != null)
-
-    return getSet([],games);
+        }
+    }
+    return getSet([],games.slice(0,5).sort((a, b) => 0.5 - Math.random()));
 }
 
 /**
@@ -140,6 +147,7 @@ function transposes(data) {
     const result = [data]
     let temp = data
     for (let i = 0;i<3;i++){
+        // eslint-disable-next-line
         temp = temp[0].map((_, colIndex) => temp.map(row => row[colIndex]));
         result.push(temp)
         temp = temp.map(row => row.reverse());

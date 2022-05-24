@@ -1,12 +1,11 @@
 import React from "react";
-import { ToastContainer } from "react-toastify";
+import {ToastContainer} from "react-toastify";
 
-import { Footer, Header, Intro, Rules } from "./container";
-import { Navbar } from "./components";
+import {Footer, Header, Intro, Rules} from "./container";
+import {Navbar} from "./components";
 import "./App.css";
-import Quartoboard from "./components/Board/Quartoboard";
-import Score from "./components/Score/Score";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import QuartoBoard from "./components/Board/QuartoBoard";
+import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import GameRules from "./components/Rules/GameRules";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -27,7 +26,7 @@ const App = () => (
             </>
           }
         />
-        <Route path="/game" element={<Quartoboard />} />
+        <Route path="/game" element={<QuartoBoard />} />
         <Route path="/game-settings" element={<GameRules />} />
       </Routes>
       <ToastContainer

@@ -24,13 +24,4 @@ export default class Piece {
             (this.bordered ? "r" : "n")
         );
     };
-
-    /**
-     *
-     * @param piece {Piece}
-     * @return boolean
-     */
-    equals(piece){
-        return piece===null ? false : piece.getIndex() === this.getIndex()
-    }
 }
