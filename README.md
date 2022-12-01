@@ -1,5 +1,6 @@
 # Quatro_Game
-This project was built with my friend Houssem in May 2022.
+
+This academic project ( University of Rouen ) was built with my friend Houssem in May 2022.
 Quarto is an outstanding game of deductive reasoning. Line up four pieces which have something in common. 
 
 ## Requirements
